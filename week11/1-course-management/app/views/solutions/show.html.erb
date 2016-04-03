@@ -1,0 +1,16 @@
+<h3> Solution Info </h3>
+
+<table border="1">
+  <tr>
+    <th>Text Block</th>
+    <th colspan="2">Options</th>
+  </tr>
+
+  <tbody>
+    <td><%= @solution.text_block %></td>
+    <td><%= link_to('Edit', edit_lecture_task_solution_path(@lecture, @task, @solution)) %></td>
+    <td><%= link_to('Destroy', lecture_task_solution_path(@lecture, @task, @solution), method: :delete) %></td>
+  </tbody>
+</table>
+
+</br><%= link_to('Back to all solutions', lecture_task_solutions_path) %>

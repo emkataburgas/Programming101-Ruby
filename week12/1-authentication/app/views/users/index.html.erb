@@ -1,0 +1,26 @@
+<h6> All users </h6>
+
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Username</th>
+		<th>E-mail</th>
+		<th colspan="2">Options</th>
+	</tr>
+
+	<tbody>
+		<% if @users.empty? %>
+      <strong> No users yet</strong>
+    <% else %>
+    	<% @users.each do |user| %>
+    		<tr>
+    			<td><%= user.id %></td>
+    			<td><%= user.username %></td>
+    			<td><%= user.e_mail %></td>
+    			<td><%= link_to 'Edit', edit_user_path(user.id) %></td>
+    			<td><%= link_to 'Destroy', user, method: :delete %></td>
+    		</tr>
+    	<% end %>
+		<% end %>
+	</tbody>
+</table>

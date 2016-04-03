@@ -1,0 +1,18 @@
+<h3> Task Info </h3>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th colspan="2">Options</th>
+  </tr>
+
+  <tbody>
+    <td><%= @task.name %></td>
+    <td><%= @task.description %></td>
+    <td><%= link_to('Edit', edit_lecture_task_path(@lecture, @task)) %></td>
+    <td><%= link_to('Destroy', lecture_task_path(@lecture, @task), method: :delete) %></td>
+  </tbody>
+</table>
+
+</br><%= link_to('Back to all tasks', lecture_tasks_path) %>

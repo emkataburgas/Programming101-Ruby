@@ -1,0 +1,18 @@
+<h3> Lecture Info </h3>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Text body</th>
+    <th colspan='2'>Options</th>
+  </tr>
+
+  <tbody>
+    <td><%= @lecture.name %></td>
+    <td><%= @lecture.text_body %></td>
+  	<td><%= link_to('Edit',  edit_lecture_path(@lecture)) %></td>
+    <td><%= link_to('Destroy', @lecture, method: :delete) %></td>
+  </tbody>
+</table>
+
+</br><%= link_to('Back to all lectures', lectures_path) %>

@@ -1,0 +1,14 @@
+<h6> Edit </h6>
+
+<%= form_for(@user) do |f| %>
+	<%= f.label :username %></br>
+	<%= f.text_field :username %></br>
+	<%= f.label :password %></br>
+	<%= f.password_field :password %></br>
+	<%= f.label :password_confirmation %></br>
+	<%= f.password_field :password_confirmation %></br>
+	<%= f.label :e_mail %></br>
+	<%= f.text_field :e_mail %></br>
+
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Lectures</h1>
+
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Text body</th>
+    <th colspan='2'>Options</th>
+	</tr>
+
+	<tbody>
+		<% if @lectures.empty? %>
+			<strong> No lectures yet</strong>
+		<% else %>
+			<% @lectures.each do |lecture| %>
+				<tr>
+					<td><%= lecture.id %></td>
+					<td><%= lecture.name %></td>
+					<td><%= lecture.text_body %></td>
+         			<td><%= link_to('Edit',  edit_lecture_path(lecture)) %></td>
+        		 	<td><%= link_to('Destroy', lecture, method: :delete) %></td>
+				</tr>
+			<% end %>
+		<% end %>
+	</tbody>
+</table>
+
+</br><%= link_to('Create new lecture', new_lecture_path, method: :get) %>

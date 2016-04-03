@@ -1,0 +1,28 @@
+<h3> All tasks </h3>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th colspan="2">Options</th>
+  </tr>
+
+  <tbody>
+    <% if @tasks.empty? %>
+      <strong> No tasks yet</strong>
+    <% else %>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.id %></td>
+          <td><%= task.name %></td>
+          <td><%= task.description %></td>
+          <td><%= link_to('Edit', edit_lecture_task_path(@lecture, task)) %></td>
+          <td><%= link_to('Destroy', lecture_task_path(@lecture, task), method: :delete) %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+</br><%= link_to('Create new task', new_lecture_task_path) %>
